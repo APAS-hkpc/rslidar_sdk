@@ -1,4 +1,4 @@
 [submodule "src/rs_driver"]
 	path = src/rs_driver
-	url = https://github.com/RoboSense-LiDAR/rs_driver.git
-	branch = main
+	url = https://github.com/APAS-hkpc/rs_driver
+	branch = RS80_XYZITRAD
