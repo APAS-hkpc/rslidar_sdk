@@ -226,4 +226,31 @@ Below are some quick guides to use rslidar_sdk.
 [Record rosbag & Replay it](doc/howto/11_how_to_record_replay_packet_rosbag.md)
 
 
+## 8 Autoware implementation
+
+### Procedures
+
+1. Go to autoware project directory, and navigate to the src folder.
+2. Go to sensor_component/external.
+3. Create a directory named robosense_driver and also a src directory inside it. Then, navigate into the src folder just created.
+  ```
+  mkdir -p robosense_driver/src
+  cd robosense_driver/src
+  ```
+4. Git clone both rslidar_sdk and rslidar_msg.
+  ```
+  git clone git@github.com:APAS-hkpc/rslidar_sdk.git
+  git clone https://github.com/RoboSense-LiDAR/rslidar_msg
+  ```
+5. Go to rslidar_sdk, switch the branch to RS80_XYZITRAD and update the repository with git submodule command.
+  ```
+  cd rslidar_sdk
+  git switch RS80_XYZITRAD
+  git submodule init
+  git submodule update
+  ```
+6. Head back to the root of autoware project and colcon build the robosense driver package.
+  ```
+  colcon build --packages-select robosense_driver
+  ```
 
